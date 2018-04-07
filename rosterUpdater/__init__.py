@@ -78,8 +78,8 @@ class RosterUpdater(object):
         username_text_field = driver.find_element_by_id("login")
         password_text_field = driver.find_element_by_id("password")
         login_button = driver.find_element_by_id("loginSubmit")
-        username_text_field.send_keys("shutas")
-        password_text_field.send_keys("NMB48sayaka")
+        username_text_field.send_keys("")
+        password_text_field.send_keys("")
         login_button.click()
         driver.quit()
 
