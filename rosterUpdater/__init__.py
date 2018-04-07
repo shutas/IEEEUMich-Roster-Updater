@@ -4,23 +4,18 @@
 
 from tkinter import Tk, Label, Button
 
+class RosterUpdater(object):
+    def __init__(self, window):
+        self.window = window
+        self.window.geometry("750x500")
+        self.window.title("IEEE Roster Updater")
 
-def main():
-    window = Tk()
-    window.geometry("500x500")
-
-    window.title("IEEE Roster Updater")
-
-    label = Label(window, text="Hello World!", font=("Arial Bold", 50))
-    label.grid(column=0, row=0)
-
-    button = Button(window, text="Click Me!", command=submit(label))
-    button.grid(column=1, row=0)
-
-    window.mainloop()
-
-def submit(label):
-    label.configure(text="Button was clicked!!!")
+        self.appLabel = Label(window, text="UMichIEEE Roster Updater", justify="center", font=("Arial Bold", 50))
+        self.appLabel.pack()
+        self.versionLabel = Label(window, text="Version 1.0", justify="center", font=("Arial", 18))
+        self.versionLabel.pack()
 
 if __name__ == "__main__":
-    main()
+    myWindow = Tk()
+    myRosterUpdater = RosterUpdater(myWindow)
+    myWindow.mainloop()
