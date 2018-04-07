@@ -2,8 +2,10 @@
 #
 # Written by: Shuta Suzuki (shutas@umich.edu)
 
+from time import sleep
 from tkinter import Tk, Label, Button, Menu, Toplevel, Message, Button, END
 from tkinter.scrolledtext import ScrolledText
+from selenium import webdriver
 
 class RosterUpdater(object):
     def __init__(self, window):
@@ -32,6 +34,8 @@ class RosterUpdater(object):
         self.text_field.grid(row=3, column=0, pady=(0, 50))
 
         # Submit Button
+        self.username = None
+        self.password = None
         self.submit_button = Button(window, text="submit", command=self.submit)
         self.submit_button.grid(row=4, column=0, pady=(0, 50))
 
@@ -65,6 +69,19 @@ class RosterUpdater(object):
         uniqname_list = submitted_text.split()
         for count, uniqname in enumerate(uniqname_list):
             print("Student " + str(count) + ": " + uniqname)
+        
+        driver = webdriver.Chrome("rosterUpdater/drivers/mac/chromedriver")
+        driver.get("https://mcommunity.umich.edu/")
+        #log_in_link = driver.find_element_by_link_text("Log In")
+        log_in_link = driver.find_element_by_class_name("gwt-Anchor")
+        log_in_link.click()
+        username_text_field = driver.find_element_by_id("login")
+        password_text_field = driver.find_element_by_id("password")
+        login_button = driver.find_element_by_id("loginSubmit")
+        username_text_field.send_keys("shutas")
+        password_text_field.send_keys("NMB48sayaka")
+        login_button.click()
+        driver.quit()
 
 if __name__ == "__main__":
     my_window = Tk()
