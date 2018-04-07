@@ -1,0 +1,4 @@
+.DS_Store
+.vscode/
+env/
+rosterUpdater.egg-info/

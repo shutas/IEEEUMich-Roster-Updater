@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# ieee-command
+#
+# General Script to for Testing etc...
+#
+# Shuta Suzuki (shutas@umich.edu)
+
+# Stop on Errors and Print Commands
+set -e
+set -x
+
+# Create Python Environment in env/ directory
+/usr/local/bin/python3 -m venv env
