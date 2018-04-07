@@ -22,10 +22,10 @@ class RosterUpdater(object):
         # Heading Labels
         self.app_label = Label(window, text="IEEEUMich Roster Updater", justify="center", font=("Arial Bold", 46))
         self.app_label.grid(row=0, column=0, padx=100, pady=(20, 0))
-        self.version_label = Label(window, text="Version 1.0", justify="center", font=("Arial", 18))
+        self.version_label = Label(window, text="Version Alpha", justify="center", font=("Arial", 18))
         self.version_label.grid(row=1, column=0, pady=(0, 50))
 
-        # Uniqname Entry
+        # Uniqname Text Field
         self.entry_label = Label(window, text="Enter new uniqnames here:", justify="center", font=("Arial", 20))
         self.entry_label.grid(row=2, column=0)
         self.text_field = ScrolledText(window, borderwidth=2, relief="solid")
